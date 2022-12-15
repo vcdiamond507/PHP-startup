@@ -6,7 +6,8 @@
                 $database ="ibike";
                 $conn = mysqli_connect($server_name, $user_name, $spassword, $database);
                 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if ($_SERVER["REQUEST_METHOD"] == "POST")
+         {
                   // collect value of input field
                   $name = $_REQUEST['name'];
                   $email = $_REQUEST['email'];
@@ -15,15 +16,20 @@
                   $city = $_REQUEST['city'];
                   $state = $_REQUEST['state'];
                   $zipcode = $_REQUEST['zipcode'];
-
                   $sql = "SELECT * FROM `userdata`";
                   $result = mysqli_query($conn, $sql);
                   $numrows = mysqli_num_rows($result);
+                  $mailresult = false;
                    while($rows= mysqli_fetch_assoc($result))
                    {
                     $preid = $rows['Email'];
+                    if($email==$preid)
+                    {
+                         $mailresult = true;
+
+                    }
                    }
-                  if($email!=$preid)
+                  if(!$mailresult)
                   {
                     $sql = "INSERT INTO `userdata` ( `Name`, `Email`, `Password`, `Address`, `City`, `State`, 
                     `Zipcode`, `Timespan`) VALUES ('$name', '$email', '$password', 
@@ -37,8 +43,19 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                               </div>');
                             }
+                  }
+                     else
+                     {
+                        echo('<div class="alert alert-danger   alert-dismissible fade 
+                         show" role="alert">
+                        <strong>Alert</strong>  &nbsp &nbsp &nbsp Email & Password already exists. 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>');
+                             
+                             
+                       
                      }
-                }
+        }
             
          ?>
 <!doctype html>
