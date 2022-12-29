@@ -173,7 +173,7 @@
                     // printing card using the local variable values
                     
                     echo '
-                    <div class="card col-md-3" style="margin: 30px 0px;">
+                    <div class="card col-md-3" id="'.$srno.'" style="margin: 30px 0px;">
                           <img src="images/' . $srno .'.png" style="height: 20rem;" 
                           class="card-img-top" alt="puslar 
                            220">
@@ -190,7 +190,6 @@
                      </div>
          <!-- main card section ends here -->
     
-
                 <div class="modal fade" id="' . $bikename .'" tabindex="-1" aria- 
                         labelledby="' . $bikename .'" aria-hidden="true" >
                      <div class="modal-dialog" style="display: flex; justify-content: 

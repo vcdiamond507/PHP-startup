@@ -74,7 +74,7 @@
         <div class="container-2" 
         style="width: 30vw; height: 100vh; padding-top: 3em; display: flex; justify-content: center;">
           <div class="formcontainer" >
-            <form style="background-color: rgb(219, 219, 222); padding: 2em; border-radius: .5rem; box-shadow: 0px 0px 20px 2px rgb(237, 225, 225);">
+            <form action="index.php" style="background-color: rgb(219, 219, 222); padding: 2em; border-radius: .5rem; box-shadow: 0px 0px 20px 2px rgb(237, 225, 225);">
                 <div class="mb-3">
                     <legend>Already have an account</legend>
                     <h5 style="color: green;"> Login Here</h5>
@@ -98,7 +98,6 @@
     <!-- footer starts here -->
     <?php
     include 'supportive-files/footer.php';
-
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -107,3 +106,7 @@
 </body>
 
 </html>
+
+
+
+
